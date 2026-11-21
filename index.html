@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <title>AI Chart Scanner Pro V2</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brandmark">AI</div>
+    <div class="brand-wrap">
+      <div class="brand">CHART SCANNER <span>PRO V2</span></div>
+      <div class="subbrand">XAUUSD · AI + INSTITUTIONAL ANALYSIS</div>
+    </div>
+    <div class="status"><i></i> ONLINE</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">GOLD MARKET INTELLIGENCE</div>
+      <h1>Read the chart.<br><em>Check the evidence.</em></h1>
+      <p>Upload an MT5 screenshot for a structured XAUUSD review. The scanner gives a trade plan only when the visible evidence supports one.</p>
+      <div class="chips"><span>SCREENSHOT BASED</span><span>MOBILE READY</span><span>NO AUTO TRADING</span></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title"><b class="step">01</b><div><h2>Upload your MT5 chart</h2><p>Keep the symbol, timeframe and right-hand price scale visible.</p></div></div>
+      <label class="dropzone" for="chartInput">
+        <input id="chartInput" type="file" accept="image/png,image/jpeg,image/webp">
+        <div id="uploadPrompt"><div class="upload-icon">↑</div><strong>Tap to choose chart screenshot</strong><span>PNG, JPG or WEBP · Maximum 8 MB</span></div>
+        <img id="preview" alt="Selected chart preview" hidden>
+      </label>
+      <div class="fields">
+        <label>Chart timeframe
+          <select id="timeframe">
+            <option>1 minute</option><option selected>5 minutes</option><option>15 minutes</option>
+            <option>30 minutes</option><option>1 hour</option><option>4 hours</option>
+            <option>Daily</option><option>Multiple timeframes</option><option>Not sure</option>
+          </select>
+        </label>
+        <label>Current XAUUSD price <small>(optional)</small>
+          <input id="currentPrice" placeholder="e.g. 2650.50" inputmode="decimal">
+        </label>
+      </div>
+      <button id="analyzeBtn" class="primary" disabled>✦ ANALYSE GOLD CHART</button>
+      <div id="error" class="error" role="alert" hidden></div>
+      <div class="privacy-note">Your screenshot is sent to the configured AI service for analysis. This app does not save it.</div>
+    </section>
+
+    <section class="panel" id="resultsPanel" hidden>
+      <div class="section-title"><b class="step">02</b><div><h2>Scanner report</h2><p>Evidence-led analysis · Verify all levels in MT5</p></div></div>
+      <div id="loading" class="loading" hidden><div class="spinner"></div><strong>Reading your chart…</strong><span>Checking structure, liquidity and confirmation.</span></div>
+      <article id="result" class="report" aria-live="polite"></article>
+      <button id="newScan" class="secondary">＋ SCAN ANOTHER CHART</button>
+    </section>
+
+    <section class="guide">
+      <h3>Get the clearest analysis</h3>
+      <ul>
+        <li>Show the full candlestick chart and right-hand price scale.</li>
+        <li>Keep XAUUSD and the timeframe visible.</li>
+        <li>Include indicators only if you want them assessed.</li>
+        <li>For multi-timeframe confirmation, upload each timeframe separately.</li>
+      </ul>
+    </section>
+    <div class="risk"><strong>Risk reminder</strong><p>AI can misread chart images and cannot see live prices, spreads, news or future candles. Verify every level in MT5. Test on demo first; never risk money based only on this report.</p></div>
+  </main>
+  <footer>AI CHART SCANNER PRO V2 <span>VERSION 2.0</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
